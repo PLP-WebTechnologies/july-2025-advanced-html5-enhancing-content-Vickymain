@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2em;
+            background: #f9f9f9;
+        }
+        header, main, footer {
+            margin-bottom: 2em;
+        }
+        form {
+            background: #fff;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            max-width: 600px;
+        }
+        fieldset {
+            border: 1px solid #ccc;
+            margin-bottom: 1em;
+            padding: 1em;
+            border-radius: 5px;
+        }
+        legend {
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin-top: 1em;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin-top: 0.2em;
+            box-sizing: border-box;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5em;
+            text-align: left;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1em;
+        }
+        ul, ol {
+            margin-bottom: 1em;
+        }
+        .readonly-field {
+            background: #eee;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Enhanced HTML5 Form Demo</h1>
+        <nav>
+            <ul>
+                <li><a href="#info">Information</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#form">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="info">
+            <h2>Information List</h2>
+            <ol>
+                <li>HTML5 forms support advanced validation features.</li>
+                <li>Semantic tags improve accessibility and structure.</li>
+                <li>Media elements enrich user experience.</li>
+            </ol>
+            <h3>Sample Table</h3>
+            <table>
+                <caption>Form Field Overview</caption>
+                <thead>
+                    <tr>
+                        <th>Field</th>
+                        <th>Type</th>
+                        <th>Validation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>Text</td>
+                        <td>Required, Autocomplete</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>Email</td>
+                        <td>Required, Pattern</td>
+                    </tr>
+                    <tr>
+                        <td>Age</td>
+                        <td>Number</td>
+                        <td>Min/Max</td>
+                    </tr>
+                    <tr>
+                        <td>Country</td>
+                        <td>Select</td>
+                        <td>Required</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="media">
+            <h2>Media Elements</h2>
+            <figure>
+                <img src="media\image.jpg" alt="My Image">
+                <figcaption>My Image</figcaption>
+            </figure>
+            <figure>
+                <video controls width="800" height="450">
+                    <source src="media\video.mp4" type="video/mp4">
+                </video>
+                <figcaption>My Video</figcaption>
+            </figure>
+        </section>
+        <section id="form">
+            <h2>Registration Form</h2>
+            <form action="#" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Personal Information</legend>
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required autocomplete="name">
+
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required autocomplete="email" pattern="^[^@\s]+@[^@\s]+\.[^@\s]+$">
+
+                    <label for="age">Age *</label>
+                    <input type="number" id="age" name="age" min="18" max="99" required placeholder="18-99">
+
+                    <label for="country">Country *</label>
+                    <select id="country" name="country" required autocomplete="country">
+                        <option value="">Select your country</option>
+                        <option value="us">United States</option>
+                        <option value="ca">Canada</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="au">Australia</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend>Account Details</legend>
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" name="username" required placeholder="Choose a username" autocomplete="username">
+
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" name="password" required minlength="8" placeholder="At least 8 characters" autocomplete="new-password">
+
+                    <label for="readonly-id">User ID (readonly)</label>
+                    <input type="text" id="readonly-id" name="readonly-id" value="12345" readonly class="readonly-field">
+                </fieldset>
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <label>
+                        <input type="checkbox" name="newsletter" value="yes" checked>
+                        Subscribe to newsletter
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="male" required>
+                        Male
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="female" required>
+                        Female
+                    </label>
+                    <label>
+                        <input type="radio" name="gender" value="other" required>
+                        Other
+                    </label>
+                    <label for="bio">Short Bio</label>
+                    <textarea id="bio" name="bio" rows="3" maxlength="200" placeholder="Tell us about yourself"></textarea>
+                </fieldset>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Enhanced Form Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
